@@ -101,7 +101,7 @@ class Register extends React.Component {
           <h1>Registration Form</h1>
           <Form validated={this.state.validated} onSubmit={this.handleSubmit}>
             <Form.Group>
-              <Form.Label>Name</Form.Label>
+              <Form.Label>User Name</Form.Label>
               <Form.Control
                 type="text"
                 placeholder="Name"
@@ -117,24 +117,7 @@ class Register extends React.Component {
                 The field is required
               </Form.Control.Feedback>
             </Form.Group>
-            <Form.Group>
-              <Form.Label>Surname</Form.Label>
-              <Form.Control
-                type="text"
-                placeholder="Surname"
-                name="surname"
-                value={this.state.surname}
-                onChange={this.handleChange}
-                required
-              />
-              <Form.Control.Feedback type="valid">
-                Valid surname
-              </Form.Control.Feedback>
-              <Form.Control.Feedback type="invalid">
-                The field is required
-              </Form.Control.Feedback>
-            </Form.Group>
-           
+            
             <Form.Group>
               <Form.Label>Gender</Form.Label>
               <Form.Control
@@ -223,11 +206,9 @@ class Register extends React.Component {
           <Modal.Body>
             <ul>
               <li>
-                <label>Name: </label> {this.state.name}
+                <label>User Name: </label> {this.state.name}
               </li>
-              <li>
-                <label>Surname: </label> {this.state.surname}
-              </li>
+              
               <li>
                 <label>Gender: </label> {this.state.gender}
               </li>

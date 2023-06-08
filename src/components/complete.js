@@ -128,7 +128,7 @@ class TodoListElement extends React.Component {
   }
 }
 
-class TodoListForm extends React.Component {
+class CompleteForm extends React.Component {
   constructor(props) {
     super(props);
     this.onSubmit = this.onSubmit.bind(this);
@@ -165,7 +165,7 @@ class TodoListForm extends React.Component {
   }
 }
 
-export default class TodoList extends React.Component {
+export default class Complete extends React.Component {
   
   constructor(props) {
     super(props);
@@ -256,16 +256,8 @@ export default class TodoList extends React.Component {
     let itemComplete = todoItems.find(x => x.index === itemIndex);
     itemComplete.isCompleted = true;
     this.setState({
-      todoItems: todoItems,
-      showSuccessMessage: true,
-      successMessage: "Wow you completed the task successfully."
+      todoItems: todoItems
     });
-    setTimeout(() => {
-      this.setState({
-        showSuccessMessage: false,
-        successMessage: ""
-      });
-    }, 2000);
   }
 
   render() {
@@ -287,10 +279,7 @@ export default class TodoList extends React.Component {
       <div>
         <Header />
         <div className="container">
-          <TodoListForm addItem={this.addItem} />
-          {this.state.showSuccessMessage && (
-            <div className="alert alert-success">{this.state.successMessage}</div>
-          )}
+          <h2>Completed Lists</h2>
           <ul className="list-group"> {items} </ul>
         </div>
       </div>
